@@ -27,6 +27,14 @@ I've read reports of people installing Windows and having tweaked options in the
 
 Minisforum also has a questionable history of providing BIOS updates, so this might or might not happen...
 
+## Bifurcation
+
+Yes, it can do so, at least from 1.09: 8x8x 8x4x4x 4x4x4x4x.
+
+## SATA
+
+The BD795i SE doesn't have sata ports on the motherboard. If you want to use SATA drives, you can do so by using an M.2 PCIe to SATA card like this: https://www.amazon.es/dp/B0BCQ55NMB worked out of the box.
+
 ## Drivers for Windows
 
 The drivers can be found here: https://pc-file.s3.us-west-1.amazonaws.com/BD795i+SE/Driver/DRFXL_AMD_MINISFORUM_Drivers_x64_240825.zip
@@ -37,9 +45,13 @@ You do not need to install the wifi drivers, there's no wifi onboard. However, i
 
 Everything worked out of the box using a latest version of EndavourOS, it even detected an usb-wifi dongle I had attached.
 
-## BIOS and underclocking
+## CPU undervolting and the BIOS
 
-The BIOS is a bit... special and hides some option.
+The BIOS is a bit... special and hides some option. The CPU also likes to run hot, idle it's easy 45c to ~50c. I thermally throttled to 70C myself and it works great. I also set the curve optimizer to -20 at least, you could push it further and stress testing it.
+
+Another thing you can do is buy some PTM7950 from Honeywell from Ebuy7 as there's been some reports the thermal paste is dried out and the PTM7950 does a pretty good job at cooling the CPU: https://www.ebuy7.com/honeywell-7950-phase-change-thermal-pad-notebook-computer-phase-change-silicone-grease-cpu-thermal-paste-pad-patch-material-1.html - i'll post pictures once I got my PTM7950 in the mail.
+
+<XXX: provide screenshots>
 
 ## NVME M.2 fan
 
@@ -50,3 +62,11 @@ Some photos show an NVME m.2 fan, it's not included in what I got.
 The motherboard has 3 fan, 4-pin PWM headers, one to support the CPU and two others. You can always extend fans by using a fan hub, this worked well. I use ( ARCTIC Case Fan Hub 10 Fold PWM Fan Distributor with SATA Power, Black, ACFAN00175A ) https://www.amazon.es/dp/B0887VG14J
 
 Noctua NF-P12 redux-1300 PWM keeps the case its located in cool.
+
+## UEFI Shell
+
+For some reason, i've only been able to get into the UEFI shell by disabling secureboot.. YMMV.
+
+## Mounting motherboard in case
+
+I use an older model Corsair 4000d, once you install a fan on the motherboard, I wanted to install another noctua non slim fan on the back exhaust, this is a couple mm too thick, I got a slim fan 120mm in the back and that worked just fine. Plan your fans! :)
